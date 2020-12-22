@@ -191,7 +191,7 @@ gaps outer 5
 
 # launches on start of i3
 exec --no-startup-id "feh --bg-scale /home/andrew/Pictures/wallpapers/low_poly/color_planet.png"
-exec --no-startup-id "./launch_polybar.sh"
+exec --no-startup-id "/home/andrew/.config/i3/launch_polybar.sh"
 exec --no-startup-id "megasync"
 
 # disable the system beep in terminal

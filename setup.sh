@@ -68,6 +68,7 @@ ln -sf $SCRIPT_DIR/.Xresources /home/$USERNAME/.Xresources && xrdb /home/$USERNA
 ln -sf $SCRIPT_DIR/starship.toml /home/$USERNAME/.config/starship.toml
 ln -sf $SCRIPT_DIR/i3 /home/$USERNAME/.config/i3 && chmod +x launch_polybar.sh
 ln -sf $SCRIPT_DIR/.bashrc /home/$USERNAME/.bashrc
+ln -sf $SCRIPT_DIR/rofi /home/$USERNAME/.config/rofi
 echo "- copying system config files"
 if [ -f $TOUCHPAD_CONF ]
 	then mv $TOUCHPAD_CONF $TOCHPAD_CONF.bak
