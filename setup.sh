@@ -10,12 +10,15 @@
 #------------ VARIABLES
 HOSTNAME=ricebowl
 USERNAME=andrew
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
 
 #------------ PERMISSION CHECK
 if [ "$EUID" -ne 0 ]
 	then echo "Please run this script with root permission."
 	exit
 fi
+
 
 #------------ SETUP EXECUTION
 read -p "Setup script ready to run, press ENTER to start."
@@ -54,12 +57,10 @@ dnf copr enable atim/bottom -y
 dnf install bottom
 
 
-echo "--> Setting up git"
-# TODO: probably should be set up before running this script to clone the whole dotfile-repo?
-
-
 echo "--> Setting up dotfiles"
-# TODO: actually copy dotfiles, push them to git first, think about a good strategy of keeping them up2date
+echo "- linking dotfiles to actual directories"
+# TODO: actually link
+ln -s $SCRIPT_DIR/polybar /home/$USERNAME/.config/polybar
 echo "- permission fix for .ssh config file"
 chmod 600 /home/$USERNAME/.ssh/config
 chown $USERNAME /home/$USERNAME/.ssh/config
