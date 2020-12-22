@@ -193,6 +193,7 @@ gaps outer 5
 exec --no-startup-id "feh --bg-scale /home/andrew/Pictures/wallpapers/low_poly/color_planet.png"
 exec --no-startup-id "/home/andrew/.config/i3/launch_polybar.sh"
 exec --no-startup-id "megasync"
+exec --no-startup-id "compton &"
 
 # disable the system beep in terminal
 exec --no-startup-id "xset -b &"
