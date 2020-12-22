@@ -52,15 +52,18 @@ echo "--> Installing software from repositories"
 dnf install neovim exa dnf-plugins-core brave evolution evolution-ews code texlive-scheme-full java-latest-openjdk-devel blender feh gimp youtube-dl anki ffmpeg flameshot vlc ffmpeg-libs compat-ffmpeg28 gstreamer1-libav gstreamer-plugins-ugly unrar git steam mpd ncmpcpp mpc tlp tlp-rdw cmake make gcc g++ docker i3lock rofi nmap dreamchess rxvt-unicode starship polybar light cryptopp libzen libmediainfo zathura mupdf zathura-mpdf-mupdf golang golint winetricks
 
 echo "--> Installing software from external sources"
-# TODO: install i3-gaps, rpiplay (airplay-server), minecraft-launcher, google chrome, intellij, megasync client, nerd fonts
+# TODO: install i3-gaps, rpiplay (airplay-server), minecraft-launcher, google chrome, intellij, megasync client, nerd fonts, discord
 dnf copr enable atim/bottom -y
 dnf install bottom
 
 
 echo "--> Setting up dotfiles"
 echo "- linking dotfiles to actual directories"
-# TODO: actually link
+# TODO: actually link all dotfiles ..
 ln -s $SCRIPT_DIR/polybar /home/$USERNAME/.config/polybar
+rm -rf /home/$USERNAME/.config/mpd
+ln -s $SCRIPT_DIR/mpd /home/$USERNAME/.config/mpd
+ln -s $SCRIPT_DIR/ncmpcpp /home/$USERNAME/.config/ncmpcpp
 echo "- permission fix for .ssh config file"
 chmod 600 /home/$USERNAME/.ssh/config
 chown $USERNAME /home/$USERNAME/.ssh/config
