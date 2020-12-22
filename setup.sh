@@ -11,7 +11,7 @@
 HOSTNAME=ricebowl
 USERNAME=andrew
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-
+TOUCHPAD_CONF=/etc/xorg.conf.d/X11/90-touchpad.conf
 
 #------------ PERMISSION CHECK
 if [ "$EUID" -ne 0 ]
@@ -60,10 +60,20 @@ dnf install bottom
 echo "--> Setting up dotfiles"
 echo "- linking dotfiles to actual directories"
 # TODO: actually link all dotfiles ..
-ln -s $SCRIPT_DIR/polybar /home/$USERNAME/.config/polybar
-rm -rf /home/$USERNAME/.config/mpd
-ln -s $SCRIPT_DIR/mpd /home/$USERNAME/.config/mpd
-ln -s $SCRIPT_DIR/ncmpcpp /home/$USERNAME/.config/ncmpcpp
+ln -sf $SCRIPT_DIR/polybar /home/$USERNAME/.config/polybar
+ln -sf $SCRIPT_DIR/mpd /home/$USERNAME/.config/mpd
+ln -sf $SCRIPT_DIR/ncmpcpp /home/$USERNAME/.config/ncmpcpp
+# TODO: version .ssh/config, but encrypted & decrypt after cloning
+ln -sf $SCRIPT_DIR/.Xresources /home/$USERNAME/.Xresources && xrdb /home/$USERNAME/.Xresources
+ln -sf $SCRIPT_DIR/starship.toml /home/$USERNAME/.config/starship.toml
+ln -sf $SCRIPT_DIR/i3 /home/$USERNAME/.config/i3 && chmod +x launch_polybar.sh
+echo "- copying system config files"
+if [ -f $TOUCHPAD_CONF ]
+	then mv $TOUCHPAD_CONF $TOCHPAD_CONF.bak
+fi
+cp -f 90-touchpad.conf $TOUCHPAD_CONF
+# TODO: alter pam login conf to unlock keyring in i3
+# TODO: check if polybar fonts are covered by nerd fonts
 echo "- permission fix for .ssh config file"
 chmod 600 /home/$USERNAME/.ssh/config
 chown $USERNAME /home/$USERNAME/.ssh/config
