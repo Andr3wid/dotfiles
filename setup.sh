@@ -70,6 +70,8 @@ ln -sf $SCRIPT_DIR/i3 /home/$USERNAME/.config/i3 && chmod +x launch_polybar.sh
 ln -sf $SCRIPT_DIR/.bashrc /home/$USERNAME/.bashrc
 ln -sf $SCRIPT_DIR/rofi /home/$USERNAME/.config/rofi
 ln -sf $SCRIPT_DIR/alacritty.yml /home/$USERNAME/.config/alacritty.yml
+ln -sf $SCRIPT_DIR/.gtkrc-2.0 /home/$USERNAME/.gtkrc-2.0
+ln -sf $SCRIPT_DIR/gtk-3.0 /home/$USERNAME/.config/gtk-3.0
 echo "- copying system config files"
 if [ -f $TOUCHPAD_CONF ]
 	then mv $TOUCHPAD_CONF $TOCHPAD_CONF.bak
