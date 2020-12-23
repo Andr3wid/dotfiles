@@ -1,9 +1,9 @@
 sw_volume: 100
 audio_device_state:1:My Pulse Output
 audio_device_state:1:visuals
-state: pause
-current: 2
-time: 959.279000
+state: play
+current: 0
+time: 84.388000
 random: 1
 repeat: 0
 single: 0
@@ -12,11 +12,5 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:Lofi/[ 𝑷𝒍𝒂𝒚𝒍𝒊𝒔𝒕 ]  코딩할때 듣기 좋은 노래 • lofi type beat • 3 hours-cbuZfY2S2UQ.mp3
-1:Classic/Bach - Cello Suite No. 2 in D minor BWV 1008 - Pincombe _ Netherlands Bach Society-_NvZRo-3wvU.mp3
-2:Classic/Beethoven - Moonlight Sonata (Full)-4591dCHe_sE.mp3
-3:Classic/Etude in C-sharp minor, Op. 10, No. 4 — Chopin (Shigatsu Wa Kimi No Uso)-3_GTxBP7t5o.mp3
-4:Classic/Frédéric Chopin, Ballade no. 1 g-minor op. 23 (Olga Scheps live)-ecC7fjnFiuk.mp3
-5:Classic/Introduction and Rondo Capriccioso — Saint-Saëns +Sheets-I8QFHrPSYTA.mp3
-6:Classic/Rachmaninoff - Prelude in C Sharp Minor (Op. 3 No. 2)-sCtixpIWBto.mp3
+0:Ambient/Skyrim Exploration Suite-xWtfo9kuRTU.mp3
 playlist_end

@@ -36,6 +36,3 @@ set -o vi
 
 # enable starship
 eval "$(starship init bash)"
-
-# set pywal set theme
-cat ~/.cache/wal/sequences
