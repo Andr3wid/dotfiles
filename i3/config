@@ -41,7 +41,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -190,7 +190,7 @@ gaps outer 5
 
 
 # launches on start of i3
-exec --no-startup-id "feh --bg-scale /home/andrew/Pictures/wallpapers/low_poly/color_planet.png"
+exec --no-startup-id "feh --bg-scale /home/andrew/Pictures/wallpapers/wallpaper.jpg"
 exec --no-startup-id "/home/andrew/.config/i3/launch_polybar.sh"
 exec --no-startup-id "megasync"
 exec --no-startup-id "compton &"

@@ -4,9 +4,9 @@
 
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    MONITOR=$m polybar -c ~/.config/polybar/config.ini main --reload  &
+    MONITOR=$m ~/.config/polybar/launch.sh
   done
 else
-   polybar -c ~/.config/polybar/config.ini main --reload  &
+   ~/.config/polybar/launch.sh
 fi
 

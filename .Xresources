@@ -19,4 +19,4 @@ URxvt.scrollBar_right: false
 URxvt.urgentOnBell: true
 URxvt.depth: 24
 URxvt.iso14755: false
-URxvt*font: xft:RobotoMono Nerd Font:size=14
+URxvt*font: xft:SauceCodePro Nerd Font:size=14
