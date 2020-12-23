@@ -77,6 +77,10 @@ fi
 cp -f 90-touchpad.conf $TOUCHPAD_CONF
 # TODO: alter pam login conf to unlock keyring in i3
 # TODO: check if polybar fonts are covered by nerd fonts
+echo "- install nord gtk & icon themes"
+# TODO: git clone git@github.com:robertovernina/NordArc.git
+# TODO: copy to local/share/themes and .local/share/icons
+# TODO: set using gsettings? or something ..
 echo "- permission fix for .ssh config file"
 chmod 600 /home/$USERNAME/.ssh/config
 chown $USERNAME /home/$USERNAME/.ssh/config
