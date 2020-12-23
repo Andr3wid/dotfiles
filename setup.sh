@@ -49,7 +49,7 @@ sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.micros
 
 
 echo "--> Installing software from repositories"
-dnf install neovim exa dnf-plugins-core brave evolution evolution-ews code texlive-scheme-full java-latest-openjdk-devel blender feh gimp youtube-dl anki ffmpeg flameshot vlc ffmpeg-libs compat-ffmpeg28 gstreamer1-libav gstreamer-plugins-ugly unrar git steam mpd ncmpcpp mpc tlp tlp-rdw cmake make gcc g++ docker i3lock rofi nmap dreamchess alacritty starship polybar light cryptopp libzen libmediainfo zathura mupdf zathura-mpdf-mupdf golang golint winetricks audacity openshot compton dunst fontawesome-fonts
+dnf install neovim exa dnf-plugins-core brave evolution evolution-ews code texlive-scheme-full java-latest-openjdk-devel blender feh gimp youtube-dl anki ffmpeg flameshot vlc ffmpeg-libs compat-ffmpeg28 gstreamer1-libav gstreamer-plugins-ugly unrar git steam mpd ncmpcpp mpc tlp tlp-rdw cmake make gcc g++ docker i3lock rofi nmap dreamchess alacritty starship polybar light cryptopp libzen libmediainfo zathura mupdf zathura-mpdf-mupdf golang golint winetricks audacity openshot picom dunst fontawesome-fonts
 
 echo "--> Installing software from external sources"
 # TODO: install i3-gaps, rpiplay (airplay-server), minecraft-launcher, google chrome, intellij, megasync client, nerd fonts, discord
@@ -72,6 +72,7 @@ ln -sf $SCRIPT_DIR/rofi /home/$USERNAME/.config/rofi
 ln -sf $SCRIPT_DIR/alacritty.yml /home/$USERNAME/.config/alacritty.yml
 ln -sf $SCRIPT_DIR/.gtkrc-2.0 /home/$USERNAME/.gtkrc-2.0
 ln -sf $SCRIPT_DIR/gtk-3.0 /home/$USERNAME/.config/gtk-3.0
+ln -sf $SCRIPT_DIR/picom /home/$USERNAME/.config/picom
 echo "- copying system config files"
 if [ -f $TOUCHPAD_CONF ]
 	then mv $TOUCHPAD_CONF $TOCHPAD_CONF.bak
