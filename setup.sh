@@ -80,6 +80,7 @@ fi
 cp -f 90-touchpad.conf $TOUCHPAD_CONF
 # TODO: alter pam login conf to unlock keyring in i3
 # TODO: check if polybar fonts are covered by nerd fonts
+# TODO: install fontawesome 4.71 
 echo "- install nord gtk & icon themes"
 # TODO: git clone git@github.com:robertovernina/NordArc.git
 # TODO: copy to local/share/themes and .local/share/icons

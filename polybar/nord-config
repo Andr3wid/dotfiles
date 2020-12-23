@@ -11,6 +11,9 @@ height = 3%
 offset-x = 0
 offset-y = 0
 radius = 0.0
+padding-left = 4
+padding-right= 4
+tray-padding = 4
 
 fixed-center = true
 override-redirect = false
@@ -43,7 +46,7 @@ wm-restack = i3
 # clipmenu-widget: showing clipmenu service
 
 # Top modules
-top-left = i3 title
+top-left = workspaces title
 top-center = mpd
 top-right = alsa network-short battery date
 
@@ -63,7 +66,7 @@ line-size = 6
 # if some of them doesn't suit your environment, you can change
 # it from here.
 # network interface, check by `ip link show`
-interface = wlp59s0
+interface = wlp3s0
 
 # when the current battery capacity excess this value,
 # the full-capacity format will be displayed.

@@ -1,10 +1,10 @@
 ; vim:ft=dosini
-[module/i3]
+[module/workspaces]
 type = internal/i3
 
-pin-workspaces = ${config.i3-pin-workspaces}
+;pin-workspaces = true
 
-strip-wsnumbers = true
+;strip-wsnumbers = true
 
 index-sort = true
 enable-click = true
@@ -17,64 +17,33 @@ fuzzy-match = false
 ; Available tags:
 ;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
 ;   <label-mode> (default)
-format = <label-state> <label-mode>
+;format = <label-state> <label-mode>
+format = <label-state>
 
 ; icons
-ws-icon-0 = 1:Home;
-ws-icon-1 = 2:Browser;
-ws-icon-2 = 3:Coding;
-ws-icon-3 = 4:Learning;
-ws-icon-4 = 5:Fun;
-ws-icon-5 = 25:Desktop;
-ws-icon-default = 
+;ws-icon-0 = 1:Terminal;
+ws-icon-0 = 1:;
+ws-icon-1 = 2:;
+ws-icon-2 = 3:;
+ws-icon-3 = 4:;
+ws-icon-4 = 5:;
+ws-icon-5 = 6:;
+ws-icon-default = 
 
 ; color
-; label-focused = 
-label-focused-underline = ${colors.nord7}
-label-focused-foreground = ${colors.nord7}
-label-focused-padding = 2
-
-; label-unfocused = •
-label-unfocused-foreground = ${colors.nord9}
-label-unfocused-padding = 2
-
-; label-urgent = 
-label-urgent-foreground = ${colors.urgent}
-label-urgent-background = ${colors.foreground}
-label-urgent-padding = 2
-
-; seperator
-label-separator = |
-label-separator-foreground = ${colors.buffer}
-
-[module/bspwm]
-type = internal/bspwm
-
-ws-icon-0 = 0;
-ws-icon-1 = 1;
-ws-icon-2 = 2;
-ws-icon-3 = 3;
-ws-icon-4 = 4;
-ws-icon-5 = 5;
-
 label-focused = %icon%
 label-focused-underline = ${colors.nord7}
 label-focused-foreground = ${colors.nord7}
-label-focused-padding = 2
+label-focused-padding = 3
 
-label-occupied = %icon%
-label-occupied-underline = ${colors.nord9}
-label-occupied-foreground = ${colors.nord9}
-label-occupied-padding = 2
+label-unfocused = %name% %icon%
+label-unfocused-foreground = ${colors.nord9}
+label-unfocused-padding = 3
 
-label-empty = %icon%
-label-empty-foreground = ${colors.buffer}
-label-empty-padding = 2
-
-label-urgent = 
+label-urgent = %icon%
 label-urgent-foreground = ${colors.urgent}
 label-urgent-background = ${colors.foreground}
-label-urgent-padding = 2
+label-urgent-padding = 3
 
 ; seperator
 label-separator = |
