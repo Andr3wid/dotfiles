@@ -108,3 +108,5 @@ fprintd-enroll
 echo "--> Starting installed services"
 systemctl start tlp
 systemctl --user start mpd
+
+# TODO: Create google cal and minecraft app shortcuts
