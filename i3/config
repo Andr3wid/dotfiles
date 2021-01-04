@@ -206,3 +206,10 @@ bindsym $mod+Shift+p exec "mpc toggle"
 bindsym XF86MonBrightnessUp exec "light -A 5"
 bindsym XF86MonBrightnessDown exec "light -U 5"
 
+# application assignments
+assign [class="brave-browser|Brave-browser"] "2:"
+assign [class="jetbrains-idea-ce|code|Code"] "3:"
+assign [class="discord"] "4:"
+assign [class="Evolution|evolution"] "5:"
+assign [class="gimp*|Gimp*|Blender"] "6:"
+assign [class="minecraft-launcher|Minecraft*|Steam*|steam*"] "7:"
