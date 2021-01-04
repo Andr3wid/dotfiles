@@ -188,6 +188,9 @@ for_window [class="^.*"] border pixel 2
 gaps inner 5
 gaps outer 5
 
+# make certain windows always float
+for_window [class="thunar|Thunar"] floating enable
+for_window [class="thunar|Thunar"] resize set 820 640
 
 # launches on start of i3
 exec --no-startup-id "feh --bg-scale /home/andrew/Pictures/wallpapers/wallpaper.jpg"
