@@ -199,6 +199,12 @@ exec --no-startup-id "megasync &"
 exec --no-startup-id "picom --experimental-backends --backend glx &"
 exec --no-startup-id "/usr/bin/gnome-keyring-daemon --start --components=secrets"
 
+# autostart productivity applications
+exec --no-startup-id "alacritty"
+exec --no-startup-id "geary"
+exec --no-startup-id "google-chrome --app=https://calendar.google.com"
+exec --no-startup-id "brave-browser-stable"
+
 # disable the system beep in terminal
 exec --no-startup-id "xset -b &"
 
