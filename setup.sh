@@ -54,7 +54,7 @@ dnf install neovim exa dnf-plugins-core brave geary code texlive-scheme-full jav
 # TODO: Check if qmk setup for keyboard (yd60mk) is required
 
 echo "--> Installing software from external sources"
-# TODO: install i3-gaps, rpiplay (airplay-server), minecraft-launcher, google chrome, intellij, megasync client, nerd fonts, discord
+# TODO: install i3-gaps, rpiplay (airplay-server), minecraft-launcher, google chrome, intellij, insync, nerd fonts, discord
 dnf copr enable atim/bottom -y
 dnf install bottom
 
