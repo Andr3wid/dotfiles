@@ -49,7 +49,7 @@ sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.micros
 
 
 echo "--> Installing software from repositories"
-dnf install neovim exa dnf-plugins-core brave geary code texlive-scheme-full java-latest-openjdk-devel blender feh gimp youtube-dl anki ffmpeg flameshot vlc ffmpeg-libs compat-ffmpeg28 gstreamer1-libav gstreamer-plugins-ugly unrar git steam mpd ncmpcpp mpc tlp tlp-rdw cmake make gcc g++ docker i3lock rofi nmap dreamchess alacritty starship polybar light cryptopp libzen libmediainfo zathura mupdf zathura-mpdf-mupdf golang golint winetricks audacity openshot picom dunst fontawesome-fonts 
+dnf install neovim exa dnf-plugins-core brave geary code texlive-scheme-full java-latest-openjdk-devel blender feh gimp youtube-dl anki ffmpeg flameshot vlc ffmpeg-libs compat-ffmpeg28 gstreamer1-libav gstreamer-plugins-ugly unrar git steam mpd ncmpcpp mpc tlp tlp-rdw cmake make gcc g++ docker i3lock rofi nmap dreamchess alacritty starship polybar light cryptopp libzen libmediainfo zathura mupdf zathura-mpdf-mupdf golang golint winetricks audacity openshot picom dunst fontawesome-fonts network-manager-applet
 
 # TODO: Check if qmk setup for keyboard (yd60mk) is required
 

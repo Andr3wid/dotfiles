@@ -48,15 +48,15 @@ wm-restack = i3
 # Top modules
 top-left = workspaces title
 top-center = mpd
-top-right = alsa network-short battery date
+top-right = alsa battery date
 
 # Bottom modules
 bottom-left = powermenu info-hackspeed weather
 bottom-center = daily-poem
 bottom-right = temperature
 
-systray-top = none
-systray-bottom = right
+systray-top = right
+# systray-bottom = right
 
 # global style
 line-size = 6
