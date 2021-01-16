@@ -198,6 +198,7 @@ exec --no-startup-id "/home/andrew/.config/i3/launch_polybar.sh"
 exec --no-startup-id "insync start"
 exec --no-startup-id "picom --experimental-backends --backend glx &"
 exec --no-startup-id "/usr/bin/gnome-keyring-daemon --start --components=secrets"
+exec --no-startup-id "xrandr --output HDMI-A-0 --primary"
 
 # autostart productivity applications
 exec --no-startup-id "alacritty"
@@ -222,4 +223,4 @@ assign [class="jetbrains-idea-ce|code|Code"] "3:"
 assign [class="discord"] "4:"
 assign [class="geary|Geary"] "5:"
 assign [class="gimp*|Gimp*|Blender"] "6:"
-assign [class="minecraft-launcher|Minecraft*|Steam*|steam*"] "7:"
+assign [class="minecraft-launcher|Minecraft*|Steam*|steam*|visualboyadvance*|desmume*"] "7:"

@@ -46,12 +46,14 @@ rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 echo "- Visual Studio Code"
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+# TODO: install plugins, go, c++/c, docker, asp, norde, material icons, liveserver, liveshare, latex workshop, todo tree, vim
 
 
 echo "--> Installing software from repositories"
-dnf install neovim exa dnf-plugins-core brave geary code texlive-scheme-full java-latest-openjdk-devel blender feh gimp youtube-dl anki ffmpeg flameshot vlc ffmpeg-libs compat-ffmpeg28 gstreamer1-libav gstreamer-plugins-ugly unrar git steam mpd ncmpcpp mpc tlp tlp-rdw cmake make gcc g++ docker i3lock rofi nmap dreamchess alacritty starship polybar light cryptopp libzen libmediainfo zathura mupdf zathura-mpdf-mupdf golang golint winetricks audacity openshot picom dunst fontawesome-fonts network-manager-applet visualboyadvance-m desmume
+dnf install neovim exa dnf-plugins-core brave geary code texlive-scheme-full java-latest-openjdk-devel blender feh gimp youtube-dl anki ffmpeg flameshot vlc ffmpeg-libs compat-ffmpeg28 gstreamer1-libav gstreamer-plugins-ugly unrar git steam mpd ncmpcpp mpc tlp tlp-rdw cmake make gcc g++ docker i3lock rofi nmap dreamchess alacritty starship polybar light cryptopp libzen libmediainfo zathura mupdf zathura-mpdf-mupdf golang golint winetricks audacity openshot picom dunst fontawesome-fonts network-manager-applet visualboyadvance-m desmume 
 
-# TODO: Check if qmk setup for keyboard (yd60mk) is required
+# TODO: install VS code plugins, change default-shell to zsh
+# 
 
 echo "--> Installing software from external sources"
 # TODO: install i3-gaps, rpiplay (airplay-server), minecraft-launcher, google chrome, intellij, insync, nerd fonts, discord
