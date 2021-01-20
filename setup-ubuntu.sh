@@ -54,6 +54,11 @@ read -p ":"
 echo "--> install the following software manually: google chrome, rpiplay, bottom, i3-gaps, minecraft, intellij idea, insync, nerd fonts, discord, alacritty, starship; press ENTER when you are done"
 read -p ":"
 
+echo "--> symlinking binaries & create .desktop entries"
+ln -sf $SCRIPT_DIR/bin/visualboyadvance-m /opt/visualboyadvance-m
+ln -sf $SCRIPT_DIR/bin/rpiplay /opt/rpiplay
+cp shortcuts/visualboyadvance.desktop /usr/share/applications/
+
 
 echo "--> Setting up dotfiles"
 echo "- linking dotfiles to actual directories"

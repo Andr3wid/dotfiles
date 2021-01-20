@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Visual Boy Advance
+Comment=GameBoy Advance emulator
+Exec=/opt/visualboyadvance-m
+Icon=
+Terminal=false
+Categories=Game;Application;
