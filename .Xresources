@@ -1,4 +1,4 @@
-#include "xresource_color_schemes/nord"
+#include ".Xres.theme.nord"
 
 !! URxvt Appearance
 !URxvt.font: -*-rissole-*
@@ -19,4 +19,4 @@ URxvt.scrollBar_right: false
 URxvt.urgentOnBell: true
 URxvt.depth: 24
 URxvt.iso14755: false
-URxvt*font: xft:SauceCodePro Nerd Font:size=14
+URxvt*font: xft:Hack Nerd Font:size=14

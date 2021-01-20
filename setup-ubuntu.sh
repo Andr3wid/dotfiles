@@ -4,7 +4,7 @@
 ## Author: 		Andreas Kogler			##
 ## Created: 		22nd December 2020		##
 ## Last modfied:	LAST_GIT_COMMIT DATE (TODO!)	##
-## Purpose: 		Fedora Linux setup automation	##
+## Purpose: 		Ubuntu Linux setup automation	##
 ##########################################################
 
 #------------ VARIABLES
@@ -19,44 +19,40 @@ if [ "$EUID" -ne 0 ]
 	exit
 fi
 
-
 #------------ SETUP EXECUTION
 read -p "Setup script ready to run, press ENTER to start."
-
 
 echo "-->  Changing hostname to '$HOSTNAME'"
 echo $HOSTNAME > /etc/hostname
 
+echo "--> Enabling brave-browser repo"
+apt install -y apt-transport-https curl gnupg # needed for repo import
 
-echo "--> Checking for system updates"
-echo "TODO: not update, but check for updates"
+echo "Adding brave to keyring"
+curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+
+echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | tee /etc/apt/sources.list.d/brave-browser-release.list
+
+echo "--> Enabling vs code repo"
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+
+install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+
+sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
 
 
-echo "--> Updating firmware"
-fwupdmgr update
-
-
-echo "--> Enabling supplementary repositories"
-echo "- RPMFusion"
-dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-echo "- Brave browser"
-dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
-rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
-echo "- Visual Studio Code"
-rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-# TODO: install plugins, go, c++/c, docker, asp, norde, material icons, liveserver, liveshare, latex workshop, todo tree, vim
-
+echo "refreshing repos"
+apt update
 
 echo "--> Installing software from repositories"
-dnf install neovim exa dnf-plugins-core brave geary code texlive-scheme-full java-latest-openjdk-devel blender feh gimp youtube-dl anki ffmpeg flameshot vlc ffmpeg-libs compat-ffmpeg28 gstreamer1-libav gstreamer-plugins-ugly unrar git steam mpd ncmpcpp mpc tlp tlp-rdw cmake make gcc g++ docker i3lock rofi nmap dreamchess alacritty starship polybar light libmediainfo zathura mupdf zathura-mpdf-mupdf golang golint winetricks audacity openshot picom dunst fontawesome-fonts network-manager-applet visualboyadvance-m desmume 
+apt install exa neovim brave-browser code default-jdk texlive-full vlc blender feh gimp youtube-dl anki ffmpeg flameshot unrar steam mpd ncmpcpp mpc tlp tlp-rdw cmake make gcc g++ docker i3lock rofi nmap golang golint light libmediainfo0v5 winetricks audacity openshot picom dunst network-manager visualboyadvance desmume i3 thunar polybar thunar-archive-plugin
 
+# TODO: automate
+echo "--> install the following vs code plugins manually: go, c++, answer set prog, material icons, norde, liveshare, latex, todo tree vim; press ENTER when you are done"
+read -p ":"
 
-echo "--> Installing software from external sources"
-# TODO: install i3-gaps, rpiplay (airplay-server), minecraft-launcher, google chrome, intellij, insync, nerd fonts, discord
-dnf copr enable atim/bottom -y
-dnf install bottom
+echo "--> install the following software manually: google chrome, rpiplay, bottom, i3-gaps, minecraft, intellij idea, insync, nerd fonts, discord, alacritty, starship; press ENTER when you are done"
+read -p ":"
 
 
 echo "--> Setting up dotfiles"
@@ -107,6 +103,10 @@ fprintd-enroll
 
 echo "--> Starting installed services"
 systemctl start tlp
+systemctl --user enable tlp
 systemctl --user start mpd
+systemctl --user enable mpd
 
 # TODO: Create google cal and minecraft app shortcuts
+
+
