@@ -8,10 +8,10 @@
  */
 
 configuration {
-	font:							"Noto Sans Bold 10";
+	font:							"Hack NF 12";
     show-icons:                     true;
 	icon-theme: 					"Papirus";
-    display-drun: 					"";
+    display-drun: 					"  search:";
     drun-display-format:            "{name}";
     disable-history:                false;
     fullscreen:                     false;
@@ -20,8 +20,8 @@ configuration {
 }
 
 * {
-    background:                     #00000000;
-    background-alt:              	#00000000;
+    background:                     #00000055;
+    background-alt:                 #00000000;
     background-bar:                 #f2f2f215;
     foreground:                     #f2f2f2EE;
     accent:			            	#3DAEE966;
@@ -100,7 +100,7 @@ element {
 }
 
 element-icon {
-    size:                           64px;
+    size:                           128px;
     border:                         0px;
 }
 
