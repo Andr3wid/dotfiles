@@ -8,7 +8,7 @@
  */
 
 configuration {
-	font:							"Hack NF 12";
+	font:							"Hack NF Bold 12";
     show-icons:                     true;
 	icon-theme: 					"Papirus";
     display-drun: 					"  search:";

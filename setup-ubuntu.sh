@@ -38,14 +38,14 @@ wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > pa
 
 install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
 
-sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
 
 
 echo "refreshing repos"
 apt update
 
 echo "--> Installing software from repositories"
-apt install exa neovim brave-browser code default-jdk texlive-full vlc blender feh gimp youtube-dl anki ffmpeg flameshot unrar steam mpd ncmpcpp mpc tlp tlp-rdw cmake make gcc g++ docker i3lock rofi nmap golang golint light libmediainfo0v5 winetricks audacity openshot picom dunst network-manager visualboyadvance desmume i3 thunar polybar thunar-archive-plugin
+apt install exa neovim brave-browser code default-jdk texlive-full vlc blender feh gimp youtube-dl anki ffmpeg flameshot unrar steam mpd ncmpcpp mpc tlp tlp-rdw cmake make gcc g++ docker i3lock rofi nmap golang golint brightnessctl libmediainfo0v5 winetricks audacity openshot picom dunst network-manager visualboyadvance desmume i3 thunar polybar thunar-archive-plugin blueman
 
 # TODO: automate
 echo "--> install the following vs code plugins manually: go, c++, answer set prog, material icons, norde, liveshare, latex, todo tree vim; press ENTER when you are done"
@@ -99,19 +99,18 @@ echo "--> Setting up root account and sudo permissions"
 echo "- redirecting bashrc"
 mv /root/.bashrc /root/.bashrc.bak && ln -s /home/$USERNAME/.bashrc /root/bashrc
 echo "- disabling sudo pw prompt"
-# TODO: Check how to correctly edit sudoers file with script (visudo?)
-
+echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 echo "--> Enrolling fingerprint"
 fprintd-enroll
 
+echo "--> Adding user to groups for brightnessctl"
+usermod -a -G video $USERNAME
+usermod -a -G input $USERNAME
 
 echo "--> Starting installed services"
 systemctl start tlp
 systemctl --user enable tlp
 systemctl --user start mpd
 systemctl --user enable mpd
-
-# TODO: Create google cal and minecraft app shortcuts
-
 
