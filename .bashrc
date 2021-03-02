@@ -22,13 +22,18 @@ export EDITOR
 # cli tool aliases
 alias vim="nvim"
 alias ls="exa -l"
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit -S -m"
+alias gp="git push"
 alias top="btm --battery"
 alias music="ncmpcpp --config=/home/andrew/.config/ncmpcpp/config"
 alias ytdl="cd ~/Music && youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 --embed-thumbnail"
 alias airplay="/opt/rpiplay -n ricebowl"
 alias ted="trans en:de"
 alias tde="trans de:en"
-alias omnet-docker="docker run --rm -it -v '$(pwd):/root/models' -u '$(id -u):$(id -g)'   -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY omnetpp/omnetpp-gui:u18.04-5.6.2"
+alias dock="xrandr --output DisplayPort-2 --right-of eDP --mode 1920x1080 --primary && sudo systemctl stop tlp"
+alias mobile="xrandr --output DisplayPort-3 --off && sudo systemctl start tlp && xrandr --auto"
 
 # directory & file aliases
 alias i3conf="vim ~/.config/i3/config"
