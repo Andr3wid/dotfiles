@@ -84,7 +84,7 @@ master-mixer = Master
 
 # mpd service connection setting
 mpd-host = 127.0.0.1
-mpd-port = 6600
+mpd-port = 6601
 
 thermal-zone = 3
 # Base temperature for where to start the ramp (in degrees celsius)
