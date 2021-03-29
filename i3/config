@@ -212,7 +212,7 @@ exec --no-startup-id "xset -b &"
 # custom hotkeys
 bindsym $mod+p exec "polybar-msg cmd toggle"
 bindsym $mod+e exec "thunar"
-bindsym $mod+Shift+p exec "mpc toggle"
+bindsym $mod+Shift+p exec "mpc -p 6601 toggle"
 bindsym Print exec "flameshot gui"
 bindsym XF86MonBrightnessUp exec "brightnessctl -d 'amdgpu_bl0' set +5%"
 bindsym XF86MonBrightnessDown exec "brightnessctl -d 'amdgpu_bl0' set 5-%"

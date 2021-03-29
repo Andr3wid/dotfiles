@@ -39,7 +39,7 @@ alias mobile="xrandr --output DisplayPort-3 --off && sudo systemctl start tlp &&
 alias i3conf="vim ~/.config/i3/config"
 alias dotdir="cd ~/github/personal/dotfiles"
 alias gdrive="cd ~/gdrive"
-alias uni="cd ~/gdrive/Uni/7.\ Semester\ -\ W20"
+alias uni="cd ~/gdrive/Uni/8.\ Semester\ -\ S21"
 
 
 

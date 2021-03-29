@@ -40,15 +40,17 @@ install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
 
 sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
 
+# TODO: add node repo for up2date node versions
+
 
 echo "refreshing repos"
 apt update
 
 echo "--> Installing software from repositories"
-apt install exa neovim brave-browser code default-jdk texlive-full vlc blender feh gimp youtube-dl anki ffmpeg flameshot unrar steam mpd ncmpcpp mpc tlp tlp-rdw cmake make gcc g++ docker i3lock rofi nmap golang golint brightnessctl libmediainfo0v5 winetricks audacity openshot picom dunst network-manager visualboyadvance desmume i3 thunar polybar thunar-archive-plugin blueman
+apt install exa neovim brave-browser code default-jdk texlive-full vlc blender feh gimp youtube-dl anki ffmpeg flameshot unrar steam mpd ncmpcpp mpc tlp tlp-rdw cmake make gcc g++ docker i3lock rofi nmap golang golint brightnessctl libmediainfo0v5 winetricks audacity openshot picom dunst network-manager visualboyadvance desmume i3 thunar polybar thunar-archive-plugin blueman thunar-media-tags-plugin
 
 # TODO: automate
-echo "--> install the following vs code plugins manually: go, c++, answer set prog, material icons, norde, liveshare, latex, todo tree vim; press ENTER when you are done"
+echo "--> install the following vs code plugins manually: go, c++, answer set prog, material icons, dark pro, liveshare, latex, todo tree, vim, tslint, bracket colorizer; press ENTER when you are done"
 read -p ":"
 
 echo "--> install the following software manually: google chrome, rpiplay, bottom, i3-gaps, minecraft, intellij idea, insync, nerd fonts, discord, alacritty, starship; press ENTER when you are done"
