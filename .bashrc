@@ -41,7 +41,7 @@ alias ted="trans en:de"
 alias tde="trans de:en"
 alias dock="xrandr --output DisplayPort-2 --right-of eDP --mode 1920x1080 --primary && sudo systemctl stop tlp"
 alias mobile="xrandr --output DisplayPort-3 --off && sudo systemctl start tlp && xrandr --auto"
-alias sysup="sudo zypper up && sudo zypper dup --no-allow-vendor-change && sudo zypper verify"
+alias sysup="sudo zypper up && sudo snapper update && rustup update"
 alias gdx-setup="java -jar /opt/gdx-setup_latest.jar"
 
 # directory & file aliases
