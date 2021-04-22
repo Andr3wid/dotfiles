@@ -50,8 +50,6 @@ zypper install -y snapd
 source /etc/profile
 systemctl enable snapd --now
 
-echo "--> Installing snap packages"
-snap install mailspring discord signal-desktop minecraft-launcher-ot 
 
 echo "--> Installing non-factory software from OBS via opi"
 opi zotero
@@ -59,6 +57,9 @@ opi arc-theme
 
 echo "--> Download and install jetbrains-toolbox for intellij and android-studio:"
 read -p "https://www.jetbrains.com/toolbox-app/download/download-thanks.html?platform=linux"
+
+echo "--> Installing snap packages"
+snap install mailspring discord signal-desktop minecraft-launcher-ot 
 
 
 #-------------- VISUAL SETTINGS
