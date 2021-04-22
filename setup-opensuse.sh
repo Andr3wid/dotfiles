@@ -22,9 +22,8 @@ fi
 #-------------- SOFTWARE INSTALLATION
 read -p "Permission check success; press ENTER to start setup"
 
-# TODO: mailspring
 echo "--> Installing software from official repositories"
-zypper install blender gimp cargo gcc neovim vlc thunar thunar-plugin-archive thunar-plugin-media-tags thunar-plugin-volman texlive-latex papirus-icon-theme breeze5-cursors opi steam mpd 
+zypper install -y blender gimp cargo gcc neovim vlc thunar thunar-plugin-archive thunar-plugin-media-tags thunar-plugin-volman texlive-latex papirus-icon-theme breeze5-cursors opi steam mpd 
 
 echo "--> Installing rust-tools with cargo"
 cargo install alacritty exa bottom fzf zoxide
@@ -34,19 +33,19 @@ echo "--> Adding & installing Google Chrome"
 zypper addrepo --refresh http://dl.google.com/linux/chrome/rpm/stable/x86_64 Google-Chrome
 wget https://dl.google.com/linux/linux_signing_key.pub
 sudo rpm --import linux_signing_key.pub
-zypper install google-chrome-stable
+zypper install -y google-chrome-stable
 
 echo "--> Adding & installing Visual Studio Code"
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo zypper addrepo --refresh https://packages.microsoft.com/yumrepos/vscode vscode
-sudo zypper install code
+sudo zypper install -y code
 read -p "-> : Install the following plugins before continuing: Bracket Pair Colorizer, LaTeX Workshop, Markdown PDF, Material Icon Theme, OneDark Pro, Prettier - Code formatter, Todo Tree, TSLint, Vim"
 
 echo "--> Installing & activating snapd for software that is problematic otherwise ...."
 zypper addrepo --refresh https://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_$(VERSION) snappy
 zypper --gpg-auto-import-keys refresh
 zypper dup --from snappy
-zypper install snapd
+zypper install -y snapd
 systemctl enable snapd --now
 
 echo "--> Installing snap packages"
