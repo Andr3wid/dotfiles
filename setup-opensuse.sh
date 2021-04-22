@@ -23,7 +23,7 @@ fi
 read -p "Permission check success; press ENTER to start setup"
 
 echo "--> Installing software from official repositories"
-zypper install -y blender gimp cargo gcc neovim vlc thunar thunar-plugin-archive thunar-plugin-media-tags thunar-plugin-volman texlive-latex papirus-icon-theme breeze5-cursors opi steam mpd 
+zypper install -y blender gimp cargo gcc neovim vlc thunar thunar-plugin-archive thunar-plugin-media-tags thunar-volman texlive-latex papirus-icon-theme breeze5-cursors opi steam mpd 
 
 echo "--> Installing rust-tools with cargo"
 cargo install alacritty exa bottom fzf zoxide
