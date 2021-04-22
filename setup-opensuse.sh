@@ -24,6 +24,7 @@ read -p "Permission check success; press ENTER to start setup"
 
 echo "--> Installing software from official repositories"
 # zypper install -y blender gimp cargo gcc neovim vlc thunar thunar-plugin-archive thunar-plugin-media-tags thunar-volman texlive-latex papirus-icon-theme breeze5-cursors opi steam mpd fzf
+zypper install -y cargo
 
 echo "--> Installing rust-tools with cargo"
 cargo install alacritty exa bottom zoxide
@@ -46,6 +47,7 @@ zypper addrepo --refresh https://download.opensuse.org/repositories/system:/snap
 zypper --gpg-auto-import-keys refresh
 zypper dup --from snappy
 zypper install -y snapd
+source /etc/profile
 systemctl enable snapd --now
 
 echo "--> Installing snap packages"
