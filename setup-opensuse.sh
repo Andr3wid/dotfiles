@@ -24,7 +24,7 @@ read -p "Permission check success; press ENTER to start setup"
 
 # TODO: mailspring
 echo "--> Installing software from official repositories"
-zypper install blender gimp cargo gcc neovim vlc thunar thunar-plugin-archive thunar-plugin-media-tags thunar-plugin-volman texlive-latex papirus-icon-theme breeze5-cursors opi steam
+zypper install blender gimp cargo gcc neovim vlc thunar thunar-plugin-archive thunar-plugin-media-tags thunar-plugin-volman texlive-latex papirus-icon-theme breeze5-cursors opi steam mpd 
 
 echo "--> Installing rust-tools with cargo"
 cargo install alacritty exa bottom fzf zoxide
@@ -65,4 +65,7 @@ read -p  "-> : Set icon / gtk theme in gnome-tweak-tool"
 read -p "-> : Install night-theme-switcher gnome shell plugin"
 #TODO: install firacode / nerd font
 
-#-------------- DOTFILE LINKING
+#-------------- CONFIGS
+# enable mpd 
+# enable and enroll fprintd
+# link all dotfiles ...
