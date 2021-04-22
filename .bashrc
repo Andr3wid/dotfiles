@@ -12,8 +12,15 @@ then
 fi
 EDITOR=vim
 
+# add cargo directory to path
+PATH=$PATH:$HOME/.cargo/bin:$HOME/Android/Sdk
+
+# set android sdk root
+ANDROID_SDK_ROOT="$HOME/Android/Sdk"
+
 export PATH
 export EDITOR
+export ANDROID_SDK_ROOT
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
@@ -34,17 +41,19 @@ alias ted="trans en:de"
 alias tde="trans de:en"
 alias dock="xrandr --output DisplayPort-2 --right-of eDP --mode 1920x1080 --primary && sudo systemctl stop tlp"
 alias mobile="xrandr --output DisplayPort-3 --off && sudo systemctl start tlp && xrandr --auto"
+alias sysup="sudo zypper up && sudo zypper dup --no-allow-vendor-change && sudo zypper verify"
+alias gdx-setup="java -jar /opt/gdx-setup_latest.jar"
 
 # directory & file aliases
-alias i3conf="vim ~/.config/i3/config"
+alias wmconf="vim ~/.config/sway/config"
 alias dotdir="cd ~/github/personal/dotfiles"
 alias gdrive="cd ~/gdrive"
-alias uni="cd ~/gdrive/Uni/8.\ Semester\ -\ S21"
-
-
 
 # set vi mode in terminal
 set -o vi
 
 # enable starship
 eval "$(starship init bash)"
+
+# enable zoxide
+eval "$(zoxide init bash --cmd y)"

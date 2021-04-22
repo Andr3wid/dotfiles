@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/andrew/.config/ncmpcpp/ncmpcpp'
+let g:netrw_dirhist_4='/home/andrew/.config/ncmpcpp'
 let g:netrw_dirhist_3='/home/andrew/GitHub/dotfiles/.git'
 let g:netrw_dirhist_2='/home/andrew/GitHub/dotfiles/polybar'
 let g:netrw_dirhist_1='/home/andrew/GitHub'

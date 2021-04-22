@@ -1,6 +1,6 @@
 # mpd communication settings
 mpd_host = "localhost"
-mpd_port = "6601"
+mpd_port = "6600"
 mpd_music_dir = "/home/andrew/Music"
 
 # visualization settings
