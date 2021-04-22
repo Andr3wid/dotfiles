@@ -23,7 +23,7 @@ fi
 read -p "Permission check success; press ENTER to start setup"
 
 echo "--> Installing software from official repositories"
-zypper install -y blender gimp cargo gcc neovim vlc thunar thunar-plugin-archive thunar-plugin-media-tags thunar-volman texlive-latex papirus-icon-theme breeze5-cursors opi steam mpd fzf
+# zypper install -y blender gimp cargo gcc neovim vlc thunar thunar-plugin-archive thunar-plugin-media-tags thunar-volman texlive-latex papirus-icon-theme breeze5-cursors opi steam mpd fzf
 
 echo "--> Installing rust-tools with cargo"
 cargo install alacritty exa bottom zoxide
@@ -42,7 +42,7 @@ sudo zypper install -y code
 read -p "-> : Install the following plugins before continuing: Bracket Pair Colorizer, LaTeX Workshop, Markdown PDF, Material Icon Theme, OneDark Pro, Prettier - Code formatter, Todo Tree, TSLint, Vim"
 
 echo "--> Installing & activating snapd for software that is problematic otherwise ...."
-zypper addrepo --refresh https://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_$($VERSION) snappy
+zypper addrepo --refresh https://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_$(echo $VERSION) snappy
 zypper --gpg-auto-import-keys refresh
 zypper dup --from snappy
 zypper install -y snapd
