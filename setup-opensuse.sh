@@ -24,8 +24,9 @@ read -p "Permission check success; press ENTER to start setup"
 
 echo "--> Installing software from official repositories"
 # zypper install -y blender gimp cargo gcc gcc-c++ cmake neovim vlc thunar thunar-plugin-archive thunar-plugin-media-tags thunar-volman texlive-latex papirus-icon-theme breeze5-cursors opi steam mpd fzf mpclient
-zypper install -y gcc gcc-c++ cmake
+zypper install -y gcc gcc-c++ cmake fontconfig
 
+# TODO: Prohibit from installing to /root, use user directory (and permissions) instead
 echo "--> Installing rust, rust-tools, cargo ..."
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 export PATH=$PATH:~/.cargo/bin
