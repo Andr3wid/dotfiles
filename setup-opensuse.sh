@@ -23,7 +23,7 @@ fi
 read -p "Permission check success; press ENTER to start setup"
 
 echo "--> Installing software from official repositories"
-zypper install -y blender gimp cargo gcc gcc-c++ cmake neovim vlc thunar thunar-plugin-archive thunar-plugin-media-tags thunar-volman texlive-latex papirus-icon-theme breeze5-cursors opi steam mpd fzf mpclient
+zypper install -y blender gimp cargo gcc gcc-c++ cmake neovim vlc thunar thunar-plugin-archive thunar-plugin-media-tags thunar-volman texlive-latex papirus-icon-theme breeze5-cursors opi steam mpd fzf mpclient libopenssl-devel
 
 echo "--> Adding & installing Google Chrome"
 zypper addrepo --refresh http://dl.google.com/linux/chrome/rpm/stable/x86_64 Google-Chrome
