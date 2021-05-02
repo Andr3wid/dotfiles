@@ -22,6 +22,12 @@ fi
 #-------------- SOFTWARE INSTALLATION
 read -p "Permission check success; press ENTER to start setup"
 
+echo "--> Adding packman repository"
+sudo zypper addrepo --refresh -cfp 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_$releasever/' packman
+
+echo "--> Installing codecs and VLC"
+sudo zypper install --from packman ffmpeg gstreamer-plugins-{good,bad,ugly,libav} libavcodec-full vlc-codecs
+
 echo "--> Installing software from official repositories"
 zypper install -y blender gimp cargo gcc gcc-c++ cmake neovim vlc thunar thunar-plugin-archive thunar-plugin-media-tags thunar-volman texlive-scheme-full papirus-icon-theme breeze5-cursors opi steam mpd fzf mpclient libopenssl-devel ncmpcpp avahi-compat-mDNSResponder-devel
 
