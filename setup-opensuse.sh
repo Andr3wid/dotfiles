@@ -63,7 +63,7 @@ read -p "https://www.jetbrains.com/toolbox-app/download/download-thanks.html?pla
 read - p "--> Download and install insync: https://www.insynchq.com/?fp_ref=colin53"
 
 echo "--> Installing snap packages"
-snap install mailspring discord signal-desktop minecraft-launcher-ot 
+snap install mailspring discord signal-desktop minecraft-launcher-ot postman
 
 
 #-------------- VISUAL SETTINGS
